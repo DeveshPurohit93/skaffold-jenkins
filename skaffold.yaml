@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta15
+kind: Config
+metadata:
+  name: sample-app
+build:
+  artifacts:
+    - image: sample-app
+      context: .
+      docker:
+        dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+      - kubernetes/*
